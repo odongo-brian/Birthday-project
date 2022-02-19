@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Odongo's birthday 🎂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<style>
+body {
+width:100vw;
+height:100vh;
+margin:0;
+padding:0;
+background:#fcebeb;
+}
+#main_page {
+overflow: hidden;
+height:100%;
+width:100%;
+background:#fcebeb;
+}
+#bday_banner {
+position: absolute;
+background-image:url('https://i.ibb.co/QHwKCbb/favpng-birthday-icon.png');
+top:-205px;
+width:100vw;
+height:590px;
+z-index:2;
+background-size:100% 100%;
+}
+#main_card {
+width:75vw;
+height:550px;
+background:#f7c8c8;
+position: absolute;
+border-radius:50px;
+left:12.5vw;
+top:200px;
+text-align: center;
+}
+#avtar {
+position: relative;
+margin: auto;
+background-image:url('https://scontent.fnbo8-1.fna.fbcdn.net/v/t39.30808-6/241731531_581196439730016_1867184933686777061_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeFAfVk0P-rxAD0TNsbTtGn34HeYYBZkvfLgd5hgFmS98slA7SPcse_5zbBxxFyEKnRRbgsy3tVPt-lMQXtseCyO&_nc_ohc=ytydcpOTlsoAX8uoC6W&_nc_oc=AQk4Z0pLpepxKCCh7BOE-TNeZ1lSM4aHsnkZ3R-ICxxO-UMfhTrNFIlReZW5lJ8Y8_A&_nc_ht=scontent.fnbo8-1.fna&oh=00_AT-8aEmwUnRrkfbCLdvqgTO85eIQFv8cx5k0A6qT4_TYFw&oe=62154252');
+width:170px;
+height:170px;
+top:25px;
+border:6px solid #ff3152;
+background-size:cover;
+border-radius:50%;
+}
+#bday_txt-1 {
+font-family:roboto Condensed;
+font-size:1.68rem;
+color:#2a2438;
+position: relative;
+top:50px;
+font-weight:bold;
+}
+#bday_txt-2 {
+font-family:rubik;
+font-size:1rem;
+color:#2a2438;
+position: relative;
+top:74px;
+font-weight:;
+padding:17px;
+line-height:1.7rem;
+}
+#button {
+width:160px;
+height:40px;
+background:#e96161;
+color:#f7c8c8;
+margin:auto;
+position:relative;
+top:72px;
+font-family:rubik;
+font-size: 0.98rem;
+color:#fcebeb;
+border-radius:8px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+#celeb_page {
+width:100%;
+height:100%;
+background:#fbeed2;
+display:none;
+background-image:url('https://i.ibb.co/qrv1tx8/favpng-birthday-cake.png');
+background-size:100% 100%;
+}
+#cnvs {
+width:100%;
+height:100%;
+position: absolute;
+background: transparent;
+}
+.balloons {
+position: absolute;
+width:150px;
+height:240px;
+}
+#balloon-1 {
+left:-38px;
+top:-50px;
+}
+#balloon-2 {
+right:-38px;
+top:-50px;
+}
+#gift {
+width:400px;
+height:160px;
+position: absolute;
+bottom: -125px;
+left:-55px;
+}
+#bday_txt_img {
+position: absolute;
+width:330px;
+height:200px;
+top:40px;
+left:110px;
+animation:anim 1.6s linear infinite;
+}
+@keyframes anim {
+0% {
+Transform:rotatez(17deg);
+top:35px;
+left:115px;
+}
+50% {
+Transform:rotatez(1deg);
+top:45px;
+left:105px;
+}
+75% {
+Transform:rotatez(-17deg);
+top:35px;
+left:115px;
+}
+100% {
+Transform:rotatez(17deg);
+top:35px;
+left:115px;
+}
+}
+@media only screen and (min-width:900px) {
+#main_card {
+width:410px;
+}
+}
+</style>
+</head>
+<body>
+<div id="main_page">
+<div id="bday_banner"></div>
+<div id="main_card">
+<section id="avtar"></section>
+<section id="bday_txt-1">HAPPY BIRTHDAY ODONGO</section>
+<section id="bday_txt-2">May my birthday be of great blessings annd victory to me.</section>
+<section id="button">Let's celebrate</section>
+<img src="https://i.ibb.co/BPXnYqP/balloon-PNG4961.png" class="balloons" id="balloon-1" />
+<img src="https://i.ibb.co/BPXnYqP/balloon-PNG4961.png" class="balloons" id="balloon-2" />
+<img src="https://i.ibb.co/TTPpFzk/gift-PNG5950.png" id="gift"/>
+</div>
+
+</div>
+
+<div id="celeb_page">
+<audio controls style=" display:none;" loop   id="music"  >
+<source  src="https://enterringtone.net/uploads/f1000/one-last-time-ariana-grande.mp3">
+</audio>
+<img src="https://www.transparentpng.com/thumb/happy-birthday/fq0K4O-birthday-transparent-birthday-animated.png" id="bday_txt_img"/>
+<canvas id="cnvs"></canvas>
+</div>
+<script>
+window.addEventListener('DOMContentLoaded',()=>{
+const $ =(_)=>{return document.querySelector(_)}
+const canvas = document.getElementById('cnvs');
+const jsConfetti = new JSConfetti({ canvas });
+var btn=$('#button');
+var main_page=$('#main_page');
+var celeb_page=$('#celeb_page');
+var music=$('#music');
+btn.onclick=()=>{
+main_page.style.display="none";
+celeb_page.style.display="block";
+music.play();
+function confettiAnim() {
+jsConfetti.addConfetti({
+confettiColors:['#eec055', '#6790f0', '#f06790', '#8367f0', '#f067d5', '#f9bec7'],
+confettiRadius: 9,
+confettiNumber: 300,
+});
+}
+setInterval(confettiAnim,1600);
+}
+});
+</script>
+</body>
+</html>
